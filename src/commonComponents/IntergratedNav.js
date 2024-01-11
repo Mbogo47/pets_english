@@ -30,7 +30,7 @@ import { useTranslation } from "react-i18next";
 import { set } from "react-hook-form";
 
 const IntegratedNavbar = () => {
-  const [language, setLanguage] = useState(localStorage.getItem("lang") || 'en')
+  const [language, setLanguage] = useState(localStorage.getItem('lang') || 'en')
 
   const changeLang = (l) => {
     
