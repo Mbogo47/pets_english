@@ -42,6 +42,7 @@ import NotPaidAd from "./Pages/PostYourAdd/components/NotPaid";
 function App() {
   useEffect(() => {
     let currentlang = localStorage.getItem("lang");
+    lng: localStorage.getItem('lang') || 'en',
     i18next.changeLanguage(currentlang);
   }, []);
     i18next.on("languageChanged", () => {
