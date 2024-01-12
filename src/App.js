@@ -41,13 +41,24 @@ import NotPaidAd from "./Pages/PostYourAdd/components/NotPaid";
 
 function App() {
   useEffect(() => {
-    let currentlang = localStorage.getItem("lang");
-    lng: localStorage.getItem('lang') || 'en',
+    let currentlang = localStorage.getItem("lang") || 'en';
+
+    i18next.init({
+      lng: currentlang,
+      fallbackLng: 'en', // Set a fallback language if needed
+      // other configuration options...
+    });
+
     i18next.changeLanguage(currentlang);
   }, []);
-    i18next.on("languageChanged", () => {
+
+  i18next.on("languageChanged", () => {
     document.body.dir = i18next.language === "ar" ? "rtl" : "ltr";
   });
+
+  // rest of your component...
+}
+
   return (
     <React.Fragment>
       <ToastContainer
