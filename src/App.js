@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-//import Custom Style scss
 import "./assets/scss/themes.scss";
 import Navbar from "./commonComponents/Navbar";
 import IntergratedNav from "./commonComponents/IntergratedNav";
@@ -26,7 +25,6 @@ import SignIn from "./Pages/AuthPages/SignIn";
 import ResetPassword from "./Pages/AuthPages/ResetPassword";
 import NewPassword from "./Pages/AuthPages/NewPassword";
 import PostAdd from "./Pages/PostYourAdd/PostAd";
-// import AdPreview from "./Pages/PostYourAdd/components/AdPreview.js";
 import Chat from "./Pages/Chat/Index";
 import MobileNav from "./commonComponents/MobileNav";
 import { ToastContainer } from "react-toastify";
@@ -38,15 +36,13 @@ import EditForm from "./Pages/Profile/ManageAds/components/EditAd";
 import EditAdFormWrapper from "./Pages/Profile/ManageAds/components/EditFormAd";
 import NotPaidAd from "./Pages/PostYourAdd/components/NotPaid";
 
-
 function App() {
   useEffect(() => {
     let currentlang = localStorage.getItem("lang") || 'en';
 
     i18next.init({
       lng: currentlang,
-      fallbackLng: 'en', // Set a fallback language if needed
-      // other configuration options...
+      fallbackLng: 'en',
     });
 
     i18next.changeLanguage(currentlang);
@@ -56,9 +52,6 @@ function App() {
     document.body.dir = i18next.language === "ar" ? "rtl" : "ltr";
   });
 
-  // rest of your component...
-}
-
   return (
     <React.Fragment>
       <ToastContainer
@@ -67,11 +60,8 @@ function App() {
         pauseOnFocusLoss={false}
         pauseOnHover={false}
       />
-      {/* <TopBar />
-      <Navbar /> */}
       <IntergratedNav />
       <BottomBar />
-      {/* <MobileNav /> */}
       <Routes>
         <Route exact path="*" element={<Error404 />} />
         <Route exact path="/" element={<AdsList />} />
@@ -81,24 +71,13 @@ function App() {
         <Route exact path="/about" element={<AboutUs />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/faqs" element={<Faqs />} />
-
         <Route
           exact
           path="/termandconditions"
           element={<TermAndConditions />}
         />
-        {/* <Route exact path="/manageads" element={<PrivateRoute><ManageAds /></PrivateRoute>} />
-        <Route exact path="/favoriteads" element={<PrivateRoute><FavoriteAds /></PrivateRoute>} />
-        <Route exact path="/myprofile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
-        <Route exact path="/signout" element={<ProtectedRoute><SignOut /></ProtectedRoute>} />
-        <Route exact path="/signup" element={<ProtectedRoute><SignUp /></ProtectedRoute>} />
-        <Route exact path="/signin" element={<ProtectedRoute><SignIn /></ProtectedRoute>} />
-        <Route exact path="/resetpassword" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
-        <Route exact path="/changepassword" element={<ProtectedRoute><NewPassword /></ProtectedRoute>} />
-        <Route exact path="/postyourad" element={<PrivateRoute><PostAdd /></PrivateRoute>} />
-        <Route exact path="/chat" element={<PrivateRoute><Chat /></PrivateRoute>} /> */}
         <Route exact path="/manageads" element={<ManageAds />} />
-        <Route exact path="/favoriteads" element={<ManageAds />} />
+        <Route exact path="/favoriteads" element={<FavoriteAds />} />
         <Route exact path="/myprofile" element={<MyProfile />} />
         <Route exact path="/signout" element={<SignOut />} />
         <Route exact path="/signup" element={<SignUp />} />
@@ -108,11 +87,9 @@ function App() {
         <Route exact path="/postyourad" element={<PostAdd />} />
         <Route exact path="/chat" element={<Chat />} />
         <Route exact path="/edit" element={<EditForm />} />
-        <Route path="/edit/:id" component={<EditAdFormWrapper />} />
-        <Route path ="/notpaid" element={<NotPaidAd />} />
-        {/* <Route path ="/preview" element={<AdPreview />} /> */}
+        <Route path="/edit/:id" element={<EditAdFormWrapper />} />
+        <Route path="/notpaid" element={<NotPaidAd />} />
       </Routes>
-      {/* <Subscribe /> */}
       <Footer />
     </React.Fragment>
   );
