@@ -280,9 +280,10 @@ const Chat = () => {
                 rows={4}
               />
             </li>
-                  <div className = "text-end>
-            <button className="send">Send</button>
-                  </div>
+                <div className="text-end">
+    <button className="send">Send</button>
+</div>
+
           </MDBTypography>
         </MDBCol>
       </MDBRow>
