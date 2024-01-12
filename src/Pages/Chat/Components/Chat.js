@@ -282,7 +282,7 @@ const Chat = () => {
             </li>
                   <div className = "text-end>
             <button className="send">Send</button>
-                  <div>
+                  </div>
           </MDBTypography>
         </MDBCol>
       </MDBRow>
