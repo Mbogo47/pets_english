@@ -10,7 +10,9 @@
   "range": "Area Range",
   "miles": "Miles",
   "any": "Any",
-  
+  "adposted":"Ad Posted",
+  "manageads": "Manage ad",
+  "Viewads": "View Ad",
   "pet_gender": "Pet Gender",
   "petAge": "Pet Age",
   "0-3_years": "0-3 years",
@@ -85,7 +87,8 @@
   "available_pets": "Available Pets",
   "positive_feedback": "Positive Feedback",
   "members": "Members",
-
+"city_label": "City",
+  "zipcode_label": "Zip Code",
   "get_in_touch": "Get in Touch",
   "form_name": "Name",
   "form_plac_name": "Enter your name",
