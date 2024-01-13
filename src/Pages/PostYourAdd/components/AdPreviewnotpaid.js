@@ -70,10 +70,10 @@ const [model, setModel] = useState(false);
               </SwiperSlide>
             ))}
             <div className="swiper-button-prev" onClick={handlePrev}>
-              <FaAngleLeft />
+             
             </div>
             <div className="swiper-button-next" onClick={handleNext}>
-              <FaAngleRight />
+              
             </div>
           </Swiper>
           {/* <img
