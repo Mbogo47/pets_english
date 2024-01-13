@@ -174,9 +174,32 @@
           color: #000;
           background: #fff;
           border: none;
-          
-
         }
+             .slider {
+  -webkit-appearance: none; /* Remove default styling in Chrome and Safari */
+  width: 100%; /* Set the width of the range input to fill its container */
+  height: 10px; /* Set the height of the range input */
+  border-radius: 5px; /* Optional: Add rounded corners to the range input */
+}
+
+/* Style the thumb in WebKit browsers (e.g., Chrome, Safari) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; /* Set the width of the thumb */
+  height: 20px; /* Set the height of the thumb */
+  background-color: #8f4300; /* Set the color of the thumb to brown */
+  border-radius: 50%; /* Create a circular thumb */
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+
+/* Style the thumb in Firefox browsers */
+.slider::-moz-range-thumb {
+  width: 20px; /* Set the width of the thumb */
+  height: 20px; /* Set the height of the thumb */
+  background-color: #8f4300; /* Set the color of the thumb to brown */
+  border-radius: 50%; /* Create a circular thumb */
+  cursor: pointer; /* Change the cursor to a pointer */
+}
       }
     }
 
