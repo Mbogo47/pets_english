@@ -134,14 +134,14 @@ const IntegratedNavbar = () => {
               </Dropdown>
             </NavItem>
             <NavItem>
-              <Link to="/signup" className="signup">
-                <span>{t("signin_sign_up")}</span>
-              </Link>
+             <NavLink to="/signup" >
+                <button className="signup">{t("signin_sign_up")}</button>
+                <span></span>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <Link to="/signin" className="signin">
-                {t("signin_button")}
-              </Link>
+              <NavLink to="/signin"><button className="signin">{t("signin_button")}</button></NavLink>
+            </NavItem>
             </NavItem>
             <NavItem>
               <NavLink href="/" style={{ color: "#000 !important" }}>
