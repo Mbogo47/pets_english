@@ -15,11 +15,12 @@ import { useTranslation } from "react-i18next";
 // import AdImage1 from "https://th.bing.com/th?id=OIP.DLaNbmQkUO02zxquS2de4wHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2";
 import AdImage2 from "../../../assets/images/ads/ad-image-2.jpg";
 import AdImage3 from "../../../assets/images/ads/ad-image-3.jpg";
-
+import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 const AdPreviewnotpaid = () => {
   const { t } = useTranslation();
   const [swiper, setSwiper] = useState(null);
-
+const [model, setModel] = useState(false);
+  const openModel = () => setModel(!model);
   const adSwiper = [
     {
       id: 1,
@@ -117,13 +118,60 @@ const AdPreviewnotpaid = () => {
             {t("payforad")}
             <FaMoneyBillWave />
           </button>
-          <button className="DeleteButton">
+          <button className="DeleteButton" onClick={openModel}>
             <RiDeleteBin5Line />
           </button>
         </div>
+      </div>
+
+      <div className="modal-dialog modal-dialog-centered">
+        <Modal isOpen={model} toggle={openModel} centered tabIndex="-1">
+          <ModalHeader
+            toggle={openModel}
+            style={{ border: "none", textAlign: "center" }}
+          ></ModalHeader>
+          <ModalBody style={{ textAlign: "center" }}>
+            {t("deletenotpaidadmessage")}
+          </ModalBody>
+          <ModalFooter
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              border: "none",
+            }}
+          >
+            <button
+              onClick={openModel}
+              style={{
+                color: "#000",
+                background: "#f5f5f5",
+                border: "none",
+                padding: "10px",
+                borderRadius: "10px",
+                margin: "0 10px 10px 10px",
+              }}
+            >
+              ){t("cancel")}
+            </button>
+            <button
+              onclick={openModel}
+              style={{
+                color: "#fff",
+                background: "#A6652C",
+                border: "none",
+                padding: "10px",
+                borderRadius: "10px",
+                margin: "0 10px 10px 10px",
+              }}
+            >
+              {t("payforad")}
+            </button>
+          </ModalFooter>
+        </Modal>
       </div>
     </div>
   );
 };
 
 export default AdPreviewnotpaid;
+
